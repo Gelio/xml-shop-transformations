@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shop xmlns="http://www.mini.pw.edu.pl/~poLab/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://www.mini.pw.edu.pl/~poLab/ Shop.xsd" >
+  <Product1>
+    <Name>Prod1Name1</Name>
+    <Price>9999999.2323</Price>
+    <Length>45.3434</Length>
+    <ProductType>C</ProductType>
+  </Product1>
+  <Product1>
+    <Name>Prod1Name2</Name>
+    <Price>123.232</Price>
+    <Length>45.3434</Length>
+    <ProductType>A</ProductType>
+  </Product1>
+  <Product1>
+    <Name>Prod1Name3</Name>
+    <Price>4589.55</Price>
+    <Length>4.334</Length>
+    <ProductType>A</ProductType>
+  </Product1>
+  <Product1>
+    <Name>Prod1Name4</Name>
+    <Price>4521.4568</Price>
+    <Length>45.3434</Length>
+    <ProductType>B</ProductType>
+  </Product1>
+  <Product1>
+    <Name>Prod1Name5</Name>
+    <Price>123.23</Price>
+    <Length>45.3434</Length>
+    <ProductType>C</ProductType>
+  </Product1>
+  <Product2>
+    <Name>Prod2Name1</Name>
+    <Price>75.235</Price>
+    <Weight>34</Weight>
+  </Product2>
+  <Product2>
+    <Name>Prod2Name2</Name>
+    <Price>85.277</Price>
+    <Weight>38.5678</Weight>
+  </Product2>
+</Shop>

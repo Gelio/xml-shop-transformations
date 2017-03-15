@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.mini.pw.edu.pl/~poLab/" xmlns="http://www.mini.pw.edu.pl/~poLab/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="ProductType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="A" />
+      <xs:enumeration value="B" />
+      <xs:enumeration value="C" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="Price">
+    <xs:restriction base="xs:decimal">
+      <xs:fractionDigits value="4" />
+      <xs:minExclusive value="0" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="Name">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[A-Z][a-zA-Z0-9]*" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:element name="Shop">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="Product1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Name" type="Name" />
+              <xs:element name="Price" type="Price" />
+              <xs:element name="Length" type="xs:decimal" />
+              <xs:element name="ProductType" type="ProductType" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element maxOccurs="unbounded" name="Product2">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Name" type="Name" />
+              <xs:element name="Price" type="Price" />
+              <xs:element name="Weight" type="xs:decimal" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
