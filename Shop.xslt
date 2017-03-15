@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:shop="http://www.mini.pw.edu.pl/~poLab/"
+<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:shop="http://www.mini.pw.edu.pl/~poLab/"
     xmlns:msxsl="urn:schemas-microsoft-com:xslt" exclude-result-prefixes="msxsl"
 >
     <xsl:output method="html" indent="yes"/>
@@ -96,6 +96,53 @@
               </tr>
               <tbody>
                 <xsl:apply-templates select="shop:Product2"/>
+              </tbody>
+            </table>
+          </div>
+
+          <div>
+            <h1>Static counter</h1>
+            <table border="1">
+              <tr>
+                <th>Product type</th>
+                <th>Count</th>
+              </tr>
+              <tbody>
+                <tr>
+                  <td>A</td>
+                  <td>
+                    <xsl:value-of select="count(shop:Product1[shop:ProductType = 'A'])"/>
+                  </td>
+                </tr>
+                <tr>
+                  <td>B</td>
+                  <td>
+                    <xsl:value-of select="count(shop:Product1[shop:ProductType = 'B'])"/>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+
+          <div>
+            <h1>Dynamic counter</h1>
+            <table border="1">
+              <tr>
+                <th>Product type</th>
+                <th>Count</th>
+              </tr>
+              <tbody>
+                <xsl:for-each select="shop:Product1/shop:ProductType[not(.=preceding::*)]">
+                  <tr>
+                    <td>
+                      <xsl:value-of select="."/>
+                    </td>
+                    <td>
+                      <xsl:value-of select="count(//shop:Product1[shop:ProductType = current()])" />
+                    </td>
+                  </tr>
+                </xsl:for-each>
               </tbody>
             </table>
           </div>
